@@ -7,7 +7,7 @@
     <authors>GreenLightGames</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    
+	<iconUrl>C:\Users\admin\Documents\GitHub\WarlandsLauncher\WarlandsLauncher\Images\Warland_icon.ico</iconUrl>
     <description>Auto Update</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>$copyright$</copyright>

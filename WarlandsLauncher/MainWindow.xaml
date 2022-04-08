@@ -143,7 +143,7 @@
 
             </Grid>
         </Popup>
-        <Button Name="UpdateButton" Click="UpdateButton_Click" Content="Update Launcher" Height="25" Width="75" Margin="954,54,51,510" FontSize="8" FontWeight="Bold" FontStyle="Normal" BorderBrush="{x:Null}" Foreground="White">
+        <Button Name="UpdateButton" Click="UpdateButton_Click" Content="Update Launcher" Height="25" Width="75" Margin="954,49,51,510" FontSize="8" FontWeight="Bold" FontStyle="Normal" BorderBrush="{x:Null}" Foreground="White">
             <Button.Background>
                 <ImageBrush ImageSource="/Images/Group 56.png" Stretch="UniformToFill"/>
             </Button.Background>
