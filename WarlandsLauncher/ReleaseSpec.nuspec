@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>WarlandsLauncher</id>
+    <version>1.0.0</version>
+    <title>WarlandsLauncher</title>
+    <authors>GreenLightGames</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    
+    <description>Auto Update</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Tag1 Tag2</tags>
+  </metadata>
+<files>
+	<file src="bin\Release\netcoreapp3.1\**" target="lib\net45" />
+</files>
+</package>
