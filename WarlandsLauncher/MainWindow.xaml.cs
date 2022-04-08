@@ -63,7 +63,7 @@ namespace WarlandsLauncher
         #endregion
 
         private LauncherStatus _status;
-        
+
 
         internal LauncherStatus Status
         {
@@ -137,7 +137,7 @@ namespace WarlandsLauncher
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             manager = await UpdateManager
-                .GitHubUpdateManager(@"https://github.com/meJevin/WPFCoreTest");
+                .GitHubUpdateManager(@"https://github.com/Jayesh382001/WarlandsLauncher.git");
         }
 
         /// <summary>
@@ -210,10 +210,10 @@ namespace WarlandsLauncher
             else
             {
                 Status = LauncherStatus.Download;
-                isUpdate=false;
+                isUpdate = false;
             }
         }
-        
+
         /// <summary>
         /// It will install the game files
         /// </summary>
@@ -278,6 +278,31 @@ namespace WarlandsLauncher
         {
             if (region != null)
                 CheckForUpdates(region);
+            CheckForLauncherUpdates();
+        }
+        private async void CheckForLauncherUpdates()
+        {
+            var updateInfo = await manager.CheckForUpdate();
+
+            if (updateInfo.ReleasesToApply.Count > 0)
+            {
+                UpdateButton.Visibility = Visibility.Visible;
+                UpdateButton.IsEnabled = true;
+
+                MessageBox.Show("Launcher Update Available!");
+            }
+            else
+            {
+                UpdateButton.Visibility = Visibility.Hidden;
+                UpdateButton.IsEnabled = false;
+            }
+        }
+
+        private async void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            await manager.UpdateApp();
+
+            MessageBox.Show("Updated succesfuly!");
         }
         /// <summary>
         /// It will be called when there is a progress in download
@@ -391,7 +416,7 @@ namespace WarlandsLauncher
                 }
             }
         }
-       
+
         /// <summary>
         /// version comparison logic
         /// </summary>
@@ -459,7 +484,7 @@ namespace WarlandsLauncher
                 UninstallPanel.IsOpen = false;
                 PlayButton.Content = uninstalling;
                 PlayButton.IsEnabled = false;
-                Directory.Delete(System.IO.Path.Combine(rootPath, "WarlandPreAlpha"),true);
+                Directory.Delete(System.IO.Path.Combine(rootPath, "WarlandPreAlpha"), true);
                 File.Delete(versionFile);
                 Status = LauncherStatus.Download;
             }

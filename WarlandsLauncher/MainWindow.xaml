@@ -9,7 +9,7 @@
         ResizeMode ="CanMinimize"
         ContentRendered="Window_ContentRendered"
         Title="WarlandsLauncher" Height="600" Width="1080">
-    <Grid>
+    <Grid HorizontalAlignment="Left">
         <Image Name="Background" Source="/Images/LauncherBG2.png" Stretch="UniformToFill"/>
         <TextBlock Name="VersionText" VerticalAlignment="Bottom"  FontSize="14" Foreground="Gold" Margin="988,0,10,12" FontWeight="Bold"/>
         <Button Name="PlayButton" Content="Checking For Updates" Click="PlayButton_Click" Height="70" FontSize="20" FontWeight="Bold" Foreground="White" Margin="24,412,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="150" FontFamily="Segoe UI" BorderBrush="{x:Null}" BorderThickness="0.1,0.1,0.1,0.1" Width="336" Cursor="Hand" ClickMode="Press" >
@@ -143,5 +143,30 @@
 
             </Grid>
         </Popup>
+        <Button Name="UpdateButton" Click="CheckForUpdatesButton_Click" Content="Update Launcher" Height="25" Width="75" Margin="954,54,51,510" FontSize="8" FontWeight="Bold" FontStyle="Normal" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Group 56.png" Stretch="UniformToFill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
